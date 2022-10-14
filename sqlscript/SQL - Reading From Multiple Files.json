@@ -1,0 +1,17 @@
+{
+	"name": "SQL - Reading From Multiple Files",
+	"properties": {
+		"content": {
+			"query": "SELECT\n    TOP 10000 OriginStateName, OriginState, \n    DestCityName,DestState,DestStateName,\n    IATA_CODE_Reporting_Airline, Tail_Number\nFROM\n    OPENROWSET(\n        BULK 'https://storagedatalake12321.dfs.core.windows.net/filesystem-synapse-workspace/On_Time_Data_*.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\nWHERE \n    (OriginState = 'TX' AND Tail_Number = 'N773SK')\n    OR\n    (OriginState = 'MI' AND Tail_Number = 'N3CDAA')\n    ",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

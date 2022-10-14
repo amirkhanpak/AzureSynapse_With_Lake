@@ -1,0 +1,18 @@
+{
+	"name": "SQL_Call_CSV1",
+	"properties": {
+		"description": "calling On_Time_Data_RemovedLastColumn.csv",
+		"content": {
+			"query": "-- -- This is auto-generated code\n-- SELECT\n--     TOP 10 * --OriginState, OriginStateName, DestState, DestCityName\n-- FROM\n--     OPENROWSET(\n--         BULK 'https://storagedatalake12321.dfs.core.windows.net/filesystem-synapse-workspace/On_Time_Data_02.csv',\n--         FORMAT = 'CSV',\n--         PARSER_VERSION = '2.0',\n--         HEADER_ROW = TRUE\n--     ) AS [result]\n--     -- WITH (\n--     --     FILE_FORMAT 'QuotedCSVWithHeaderFormat'\n--     -- ) AS rows\n\nSELECT\n    TOP 10 OriginState, OriginStateName, DestState, DestCityName, FlightDate\nFROM\n    OPENROWSET(\n        BULK 'https://storagedatalake12321.blob.core.windows.net/filesystem-synapse-workspace/On_Time_Data_RemovedLastColumn.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\nWHERE \n     OriginState IN('WA', 'TX')\n     AND \n    FlightDate = '1/6/2016'\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

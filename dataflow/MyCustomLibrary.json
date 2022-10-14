@@ -1,0 +1,16 @@
+{
+	"name": "MyCustomLibrary",
+	"properties": {
+		"description": "CurrentDayOfMonth",
+		"type": "UDFLibrary",
+		"typeProperties": {
+			"sources": [],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"fn_CurrentDayOfMonth() as integer = dayOfMonth(currentDate()),",
+				"Week(integer) as long = weeks(i1)"
+			]
+		}
+	}
+}

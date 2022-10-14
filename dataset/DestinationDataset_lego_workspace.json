@@ -1,0 +1,25 @@
+{
+	"name": "DestinationDataset_lego_workspace",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "workspace-flight-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sets.csv",
+				"folderPath": "lego",
+				"fileSystem": "filesystem-synapse-workspace"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

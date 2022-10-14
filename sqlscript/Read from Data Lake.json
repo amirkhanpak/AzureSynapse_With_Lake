@@ -1,0 +1,17 @@
+{
+	"name": "Read from Data Lake",
+	"properties": {
+		"content": {
+			"query": "-- This is auto-generated code\nSELECT\n    MONTH(FlightDate) Flight_Month, DAY(FlightDate) Flight_Day, COUNT(1) TotFlights\nFROM\n    OPENROWSET(\n        BULK 'https://storagedatalake12321.dfs.core.windows.net/filesystem-synapse-workspace/FlightData/*.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\nGROUP BY MONTH(FlightDate), DAY(FlightDate) \nHAVING  COUNT(1) > 10\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

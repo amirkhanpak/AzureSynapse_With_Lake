@@ -1,0 +1,587 @@
+{
+	"name": "Notebook_Csv_Parquet",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "ApachSprkPolMAK",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "bcffe7ee-d9a9-4894-b92c-d6bf58f576ca"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"896d1794-04a2-4a6f-943b-a190b8ec6a3d": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "2016",
+										"1": "1",
+										"2": "1",
+										"3": "6",
+										"4": "3",
+										"5": "1/6/2016",
+										"6": "AA",
+										"7": "19805",
+										"8": "AA",
+										"9": "N4YBAA",
+										"10": "43",
+										"11": "11298",
+										"12": "1129804",
+										"13": "30194",
+										"14": "DFW",
+										"15": "Dallas/Fort Worth TX",
+										"16": "TX",
+										"17": "48",
+										"18": "Texas",
+										"19": "74",
+										"20": "11433",
+										"21": "1143302",
+										"22": "31295",
+										"23": "DTW",
+										"24": "Detroit MI",
+										"25": "MI",
+										"26": "26",
+										"27": "Michigan",
+										"28": "43",
+										"29": "1100",
+										"30": "1057",
+										"31": "-3",
+										"32": "0",
+										"33": "0",
+										"34": "-1",
+										"35": "1100-1159",
+										"36": "15",
+										"37": "1112",
+										"38": "1424",
+										"39": "8",
+										"40": "1438",
+										"41": "1432",
+										"42": "-6",
+										"43": "0",
+										"44": "0",
+										"45": "-1",
+										"46": "1400-1459",
+										"47": "0",
+										"49": "0",
+										"50": "158",
+										"51": "155",
+										"52": "132",
+										"53": "1",
+										"54": "986",
+										"55": "4"
+									},
+									{
+										"0": "2016",
+										"1": "1",
+										"2": "1",
+										"3": "7",
+										"4": "4",
+										"5": "1/7/2016",
+										"6": "AA",
+										"7": "19805",
+										"8": "AA",
+										"9": "N434AA",
+										"10": "43",
+										"11": "11298",
+										"12": "1129804",
+										"13": "30194",
+										"14": "DFW",
+										"15": "Dallas/Fort Worth TX",
+										"16": "TX",
+										"17": "48",
+										"18": "Texas",
+										"19": "74",
+										"20": "11433",
+										"21": "1143302",
+										"22": "31295",
+										"23": "DTW",
+										"24": "Detroit MI",
+										"25": "MI",
+										"26": "26",
+										"27": "Michigan",
+										"28": "43",
+										"29": "1100",
+										"30": "1056",
+										"31": "-4",
+										"32": "0",
+										"33": "0",
+										"34": "-1",
+										"35": "1100-1159",
+										"36": "14",
+										"37": "1110",
+										"38": "1416",
+										"39": "10",
+										"40": "1438",
+										"41": "1426",
+										"42": "-12",
+										"43": "0",
+										"44": "0",
+										"45": "-1",
+										"46": "1400-1459",
+										"47": "0",
+										"49": "0",
+										"50": "158",
+										"51": "150",
+										"52": "126",
+										"53": "1",
+										"54": "986",
+										"55": "4"
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "Year",
+										"type": "string"
+									},
+									{
+										"key": "1",
+										"name": "Quarter",
+										"type": "string"
+									},
+									{
+										"key": "2",
+										"name": "Month",
+										"type": "string"
+									},
+									{
+										"key": "3",
+										"name": "DayofMonth",
+										"type": "string"
+									},
+									{
+										"key": "4",
+										"name": "DayOfWeek",
+										"type": "string"
+									},
+									{
+										"key": "5",
+										"name": "FlightDate",
+										"type": "string"
+									},
+									{
+										"key": "6",
+										"name": "Reporting_Airline",
+										"type": "string"
+									},
+									{
+										"key": "7",
+										"name": "DOT_ID_Reporting_Airline",
+										"type": "string"
+									},
+									{
+										"key": "8",
+										"name": "IATA_CODE_Reporting_Airline",
+										"type": "string"
+									},
+									{
+										"key": "9",
+										"name": "Tail_Number",
+										"type": "string"
+									},
+									{
+										"key": "10",
+										"name": "Flight_Number_Reporting_Airline",
+										"type": "string"
+									},
+									{
+										"key": "11",
+										"name": "OriginAirportID",
+										"type": "string"
+									},
+									{
+										"key": "12",
+										"name": "OriginAirportSeqID",
+										"type": "string"
+									},
+									{
+										"key": "13",
+										"name": "OriginCityMarketID",
+										"type": "string"
+									},
+									{
+										"key": "14",
+										"name": "Origin",
+										"type": "string"
+									},
+									{
+										"key": "15",
+										"name": "OriginCityName",
+										"type": "string"
+									},
+									{
+										"key": "16",
+										"name": "OriginState",
+										"type": "string"
+									},
+									{
+										"key": "17",
+										"name": "OriginStateFips",
+										"type": "string"
+									},
+									{
+										"key": "18",
+										"name": "OriginStateName",
+										"type": "string"
+									},
+									{
+										"key": "19",
+										"name": "OriginWac",
+										"type": "string"
+									},
+									{
+										"key": "20",
+										"name": "DestAirportID",
+										"type": "string"
+									},
+									{
+										"key": "21",
+										"name": "DestAirportSeqID",
+										"type": "string"
+									},
+									{
+										"key": "22",
+										"name": "DestCityMarketID",
+										"type": "string"
+									},
+									{
+										"key": "23",
+										"name": "Dest",
+										"type": "string"
+									},
+									{
+										"key": "24",
+										"name": "DestCityName",
+										"type": "string"
+									},
+									{
+										"key": "25",
+										"name": "DestState",
+										"type": "string"
+									},
+									{
+										"key": "26",
+										"name": "DestStateFips",
+										"type": "string"
+									},
+									{
+										"key": "27",
+										"name": "DestStateName",
+										"type": "string"
+									},
+									{
+										"key": "28",
+										"name": "DestWac",
+										"type": "string"
+									},
+									{
+										"key": "29",
+										"name": "CRSDepTime",
+										"type": "string"
+									},
+									{
+										"key": "30",
+										"name": "DepTime",
+										"type": "string"
+									},
+									{
+										"key": "31",
+										"name": "DepDelay",
+										"type": "string"
+									},
+									{
+										"key": "32",
+										"name": "DepDelayMinutes",
+										"type": "string"
+									},
+									{
+										"key": "33",
+										"name": "DepDel15",
+										"type": "string"
+									},
+									{
+										"key": "34",
+										"name": "DepartureDelayGroups",
+										"type": "string"
+									},
+									{
+										"key": "35",
+										"name": "DepTimeBlk",
+										"type": "string"
+									},
+									{
+										"key": "36",
+										"name": "TaxiOut",
+										"type": "string"
+									},
+									{
+										"key": "37",
+										"name": "WheelsOff",
+										"type": "string"
+									},
+									{
+										"key": "38",
+										"name": "WheelsOn",
+										"type": "string"
+									},
+									{
+										"key": "39",
+										"name": "TaxiIn",
+										"type": "string"
+									},
+									{
+										"key": "40",
+										"name": "CRSArrTime",
+										"type": "string"
+									},
+									{
+										"key": "41",
+										"name": "ArrTime",
+										"type": "string"
+									},
+									{
+										"key": "42",
+										"name": "ArrDelay",
+										"type": "string"
+									},
+									{
+										"key": "43",
+										"name": "ArrDelayMinutes",
+										"type": "string"
+									},
+									{
+										"key": "44",
+										"name": "ArrDel15",
+										"type": "string"
+									},
+									{
+										"key": "45",
+										"name": "ArrivalDelayGroups",
+										"type": "string"
+									},
+									{
+										"key": "46",
+										"name": "ArrTimeBlk",
+										"type": "string"
+									},
+									{
+										"key": "47",
+										"name": "Cancelled",
+										"type": "string"
+									},
+									{
+										"key": "48",
+										"name": "CancellationCode",
+										"type": "string"
+									},
+									{
+										"key": "49",
+										"name": "Diverted",
+										"type": "string"
+									},
+									{
+										"key": "50",
+										"name": "CRSElapsedTime",
+										"type": "string"
+									},
+									{
+										"key": "51",
+										"name": "ActualElapsedTime",
+										"type": "string"
+									},
+									{
+										"key": "52",
+										"name": "AirTime",
+										"type": "string"
+									},
+									{
+										"key": "53",
+										"name": "Flights",
+										"type": "string"
+									},
+									{
+										"key": "54",
+										"name": "Distance",
+										"type": "string"
+									},
+									{
+										"key": "55",
+										"name": "DistanceGroup",
+										"type": "string"
+									},
+									{
+										"key": "56",
+										"name": "CarrierDelay",
+										"type": "string"
+									},
+									{
+										"key": "57",
+										"name": "WeatherDelay",
+										"type": "string"
+									},
+									{
+										"key": "58",
+										"name": "NASDelay",
+										"type": "string"
+									},
+									{
+										"key": "59",
+										"name": "SecurityDelay",
+										"type": "string"
+									},
+									{
+										"key": "60",
+										"name": "LateAircraftDelay",
+										"type": "string"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"0"
+									],
+									"seriesFieldKeys": [
+										"0"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "sql"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/7409e1a4-4a96-4d42-bab0-9452665a025e/resourceGroups/resGrp-DataLake/providers/Microsoft.Synapse/workspaces/workspace-flight/bigDataPools/ApachSprkPolMAK",
+				"name": "ApachSprkPolMAK",
+				"type": "Spark",
+				"endpoint": "https://workspace-flight.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ApachSprkPolMAK",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.2",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"# df = spark.read.load('abfss://filesystem-synapse-workspace@storagedatalake12321.dfs.core.windows.net/FlightData/OriginState=TX', format='csv'\r\n",
+					"# df = spark.read.load('abfss://filesystem-synapse-workspace@storagedatalake12321.dfs.core.windows.net/On_Time_Data_TX.csv', format='csv'\r\n",
+					"\r\n",
+					"df = spark.read.load('abfss://filesystem-synapse-workspace@storagedatalake12321.dfs.core.windows.net/On_Time_Data_All.csv', format='csv'\r\n",
+					", header=True\r\n",
+					")\r\n",
+					"# .where(\"OriginState='TX'\")\r\n",
+					"\r\n",
+					"display(df.limit(2))\r\n",
+					"\r\n",
+					"\r\n",
+					"df.coalesce(1).write.option(\"maxRecordsPerFile\", 10000000).parquet('abfss://filesystem-synapse-workspace@storagedatalake12321.dfs.core.windows.net/', mode='append')\r\n",
+					"\r\n",
+					"# df.coalesce(1).write.option(\"maxRecordsPerFile\",   100000000).parquet('abfss://filesystem-synapse-workspace@storagedatalake12321.dfs.core.windows.net/', mode='append')\r\n",
+					""
+				],
+				"execution_count": 53
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"# Read Sub Folders properly"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					}
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"# -- // # -- // # -- spark.Sql(\"CREATE DATABASE mytestlakedb\")\r\n",
+					"# -- spark.Sql(\"SELECT * FROM sys.databases\")\r\n",
+					"rootPath = 'abfss://filesystem-synapse-workspace@storagedatalake12321.dfs.core.windows.net/'\r\n",
+					"pathFolder = 'FlightData/PartitionByStateAndDay/'\r\n",
+					"\r\n",
+					"# df = spark.read.option(basePath, pathFolder).parquet(path+'OriginState=AZ/',\\\r\n",
+					"#                                                                 path+'DayofMonth=1/',\\\r\n",
+					"#                                                                 path+'Season=2012/')\r\n",
+					"# df = spark.read.option(\"basePath\", pathFolder).parquet(pathFolder+'OriginState=AZ/')\r\n",
+					"df = spark.read.parquet(rootPath+pathFolder+'OriginState=CA/DayofMonth=10/',\\\r\n",
+					"                        rootPath+pathFolder+'OriginState=AZ/DayofMonth=20/')\r\n",
+					"\r\n",
+					"df.show(500)\r\n",
+					"\r\n",
+					"\r\n",
+					""
+				],
+				"execution_count": 67
+			}
+		]
+	}
+}

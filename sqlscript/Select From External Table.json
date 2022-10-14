@@ -1,0 +1,17 @@
+{
+	"name": "Select From External Table",
+	"properties": {
+		"content": {
+			"query": "SELECT\n    MONTH(FlightDate) Flight_Month, \n    DAY(FlightDate) Flight_Day, \n    COUNT(1) TotFlights\nFROM\n    [dbo].[External_Table_workspace_flight_On_Time]\nGROUP BY\n    MONTH(FlightDate), \n    DAY(FlightDate) \nHAVING\n    COUNT(1) > 1\nORDER BY Flight_Day, TotFlights\n\n-- SELECT COUNT(1) FROM    [dbo].[External_Table_workspace_flight_On_Time] --62\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "workload_SQL_Database_mak",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

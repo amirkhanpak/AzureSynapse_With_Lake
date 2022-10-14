@@ -1,0 +1,17 @@
+{
+	"name": "Generate ExtTbl_workspace_flight_FlightData_RootFolder_CSV",
+	"properties": {
+		"content": {
+			"query": "-- DROP EXTERNAL TABLE [dbo].[ExtTbl_workspace_flight_FlightData_RootFolder_CSV]\n-- DROP EXTERNAL FILE FORMAT [ExtFileFormat_workspace_flight_FlightData_RootFolder_CSV] \n-- DROP EXTERNAL DATA SOURCE [ExtDataSource_workspace_flight_FlightData_RootFolder_CSV] \n\n\nIF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'ExtFileFormat_workspace_flight_FlightData_RootFolder_CSV') \n\tCREATE EXTERNAL FILE FORMAT [ExtFileFormat_workspace_flight_FlightData_RootFolder_CSV] \n\tWITH ( FORMAT_TYPE = DELIMITEDTEXT ,\n\t       FORMAT_OPTIONS (\n\t\t\t FIELD_TERMINATOR = ',',\n\t\t\t --STRING_DELIMITER = ',',\n\t\t\t USE_TYPE_DEFAULT = FALSE,\n\t\t\t FIRST_ROW=2\n\t\t\t))\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'ExtDataSource_workspace_flight_FlightData_RootFolder_CSV') \n\tCREATE EXTERNAL DATA SOURCE [ExtDataSource_workspace_flight_FlightData_RootFolder_CSV] \n\tWITH (\n\t\tLOCATION = 'abfss://filesystem-synapse-workspace@storagedatalake12321.dfs.core.windows.net' \n\t)\nGO\n\nCREATE EXTERNAL TABLE ExtTbl_workspace_flight_FlightData_RootFolder_CSV (\n\t[Year] bigint,\n\t[Quarter] bigint,\n\t[Month] bigint,\n\t[DayofMonth] bigint,\n\t[DayOfWeek] bigint,\n\t[FlightDate] nvarchar(4000),\n\t[Reporting_Airline] nvarchar(4000),\n\t[DOT_ID_Reporting_Airline] bigint,\n\t[IATA_CODE_Reporting_Airline] nvarchar(4000),\n\t[Tail_Number] nvarchar(4000),\n\t[Flight_Number_Reporting_Airline] bigint,\n\t[OriginAirportID] bigint,\n\t[OriginAirportSeqID] bigint,\n\t[OriginCityMarketID] bigint,\n\t[Origin] nvarchar(4000),\n\t[OriginCityName] nvarchar(4000),\n\t[OriginState] nvarchar(4000),\n\t[OriginStateFips] nvarchar(4000),\n\t[OriginStateName] nvarchar(4000),\n\t[OriginWac] nvarchar(4000),\n\t[DestAirportID] bigint,\n\t[DestAirportSeqID] bigint,\n\t[DestCityMarketID] bigint,\n\t[Dest] nvarchar(4000),\n\t[DestCityName] nvarchar(4000),\n\t[DestState] nvarchar(4000),\n\t[DestStateFips] nvarchar(4000),\n\t[DestStateName] nvarchar(4000),\n\t[DestWac] bigint,\n\t[CRSDepTime] nvarchar(4000),\n\t[DepTime] bigint,\n\t[DepDelay] bigint,\n\t[DepDelayMinutes] bigint,\n\t[DepDel15] bigint,\n\t[DepartureDelayGroups] bigint,\n\t[DepTimeBlk] nvarchar(4000),\n\t[TaxiOut] bigint\n\t)\n\tWITH (\n\tLOCATION = '/',\n\tDATA_SOURCE = [ExtDataSource_workspace_flight_FlightData_RootFolder_CSV],\n\tFILE_FORMAT = [ExtFileFormat_workspace_flight_FlightData_RootFolder_CSV]\n\t)\nGO\n\n\n-- SELECT TOP 1 CONVERT(nvarchar(100), [OriginStateFips]) FROM dbo.ExtTbl_workspace_flight_FlightData_RootFolder_CSV\nSELECT TOP 10 * FROM dbo.ExtTbl_workspace_flight_FlightData_RootFolder_CSV\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "workload_SQL_Database_mak",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

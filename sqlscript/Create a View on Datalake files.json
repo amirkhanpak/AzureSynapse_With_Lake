@@ -1,0 +1,17 @@
+{
+	"name": "Create a View on Datalake files",
+	"properties": {
+		"content": {
+			"query": "-- SELECT OriginState, COUNT(1) TotalFlightFromState FROM [dbo].[View_On_Time_Data_All_Files]\nSELECT TOP 10 *  FROM [dbo].[View_On_Time_Data_All_Files]\nSELECT OriginState,  COUNT(OriginState) \n\tTotalFlightFromState FROM [dbo].[View_On_Time_Data_All_Files]\nGROUP BY OriginState\n\n-- ALTER VIEW [dbo].[View_On_Time_Data_All_Files]\n-- \tAS \n-- \t\tSELECT\n-- \t\t\tTOP 10000 OriginStateName, OriginState, \n-- \t\t\tDestCityName,DestState,DestStateName,\n-- \t\t\tIATA_CODE_Reporting_Airline, Tail_Number\n-- \t\tFROM\n-- \t\t\tOPENROWSET(\n-- \t\t\t\tBULK 'https://storagedatalake12321.dfs.core.windows.net/filesystem-synapse-workspace/On_Time_Data_*.csv',\n-- \t\t\t\tFORMAT = 'CSV',\n-- \t\t        PARSER_VERSION = '2.0',\n-- \t\t\t\tHEADER_ROW = TRUE\n-- \t\t\t) AS [result]\n\t\t",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "workload_SQL_Database_mak",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
